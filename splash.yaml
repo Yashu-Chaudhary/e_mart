@@ -1,0 +1,16 @@
+flutter_native_splash:
+  color: "#ffffff"
+  color_dark: "#272727"
+  image: 
+  image_dark:
+
+  android_12:
+    color: "#ffffff"
+    color_dark: "#272727"
+    image: assets\logos\logo-white-theme.png
+    image_dark: assets\logos\logo-dark-theme.png
+  
+  web: false
+
+# flutter pub run flutter_native_splash:create --path=splash.yaml  ................to add..... write in terminal...........
+#flutter pub run flutter_native_splash:remove   .................to rmeove........
