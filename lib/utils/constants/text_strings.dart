@@ -58,6 +58,8 @@ class PText {
       "Didn't get the email? Check your junk/spam or resend it.";
   static const String yourAccountCreatedTitle =
       "Your account successfully created!";
+  static const String submit = "Submit";
+  static const String done = "Done";
   static const String yourAccountCreatedSubTitle =
       "Welcome to you Ultimate shopping Destination: Your account is created, Unleash the Joy of Seamless Online Shopping!";
 }

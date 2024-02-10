@@ -1,3 +1,4 @@
+import 'package:e_mart/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:e_mart/features/authentication/screens/signup/signup.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:e_mart/utils/constants/text_strings.dart';
@@ -49,10 +50,9 @@ class PLoginForm extends StatelessWidget {
 
                 // ...............Forget Password.............
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => const ForgetPassword()),
                   child: const Text(
                     PText.forgetPassword,
-                    // style: TextStyle(fontSize: ),
                   ),
                 )
               ],
