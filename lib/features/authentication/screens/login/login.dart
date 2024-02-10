@@ -12,14 +12,13 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-
     return const Scaffold(
       body: SingleChildScrollView(
         child: Padding(
           padding: PSpacingStyle.paddingWithAppBarHeight,
           child: Column(
             children: [
+              Column(),
               // ........Logo, Title & Sub-Title.......
               PLoginHeader(),
 
@@ -28,10 +27,12 @@ class LoginScreen extends StatelessWidget {
 
               // ............Divider..................
               PFormDivider(dividerText: PText.onSignInWith),
-              SizedBox(width: PSizes.spaceBtwItems,),
+              SizedBox(
+                width: PSizes.spaceBtwItems,
+              ),
 
               // ................Footer................
-             PSocialButtons(),
+              PSocialButtons(),
             ],
           ),
         ),
