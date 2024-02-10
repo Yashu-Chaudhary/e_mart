@@ -34,7 +34,7 @@ class PTextTheme {
     headlineLarge: const TextStyle().copyWith(
         fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white),
     headlineMedium: const TextStyle().copyWith(
-        fontSize: 24, fontWeight: FontWeight.w600, color: Colors.black),
+        fontSize: 24, fontWeight: FontWeight.w600, color: Colors.white),
     headlineSmall: const TextStyle().copyWith(
         fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
     titleLarge: const TextStyle().copyWith(

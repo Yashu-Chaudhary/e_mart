@@ -13,6 +13,7 @@ class App extends StatelessWidget {
       theme: PAppTheme.lightTheme,
       darkTheme: PAppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
-    home: const OnBoardingScreen(),);
+      home: const OnBoardingScreen(),
+    );
   }
 }
