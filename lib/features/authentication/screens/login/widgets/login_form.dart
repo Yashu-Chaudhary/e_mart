@@ -1,4 +1,4 @@
-import 'package:e_mart/features/authentication/screens/signup/widgets/signup.dart';
+import 'package:e_mart/features/authentication/screens/signup/signup.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:e_mart/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';

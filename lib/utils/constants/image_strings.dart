@@ -18,4 +18,13 @@ class PImages {
       "assets/images/on_boarding_images/sammy-line-shopping.gif";
   static const onBoardingImage3 =
       'assets/images/on_boarding_images/sammy-line-delivering.gif';
+
+  // ...............Animations.................
+  static const String productsIllustration = "";
+  static const String productSaleIllustration = "";
+  static const String staticSuccessIllustration = "assets/images/animations/sammy-line-woman-gives-five-to-a-robot-with-artificial-intelligence.png";
+  static const String deliveredInPlaneIllustration = "";
+  static const String deliveredEmailIllustration =
+      "assets/images/animations/sammy-line-man-receives-a-mail.png";
+  static const String verifyIllustration = "";
 }

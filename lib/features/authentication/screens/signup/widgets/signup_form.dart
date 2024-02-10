@@ -1,5 +1,6 @@
 import 'package:e_mart/common/widgets/login_signup/form_divider.dart';
 import 'package:e_mart/common/widgets/login_signup/social_buttons.dart';
+import 'package:e_mart/features/authentication/screens/signup/verify_email.dart';
 import 'package:e_mart/features/authentication/screens/signup/widgets/terms_conditons_checkbox.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:e_mart/utils/constants/text_strings.dart';
@@ -90,7 +91,7 @@ class PSignupForm extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () => Get.to(() => const VerifyEmailScreen()),
             child: const Text(PText.createAccount),
           ),
         ),
