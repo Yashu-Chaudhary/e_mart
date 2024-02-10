@@ -1,6 +1,6 @@
 # e_mart
 
-A new Flutter project.
+A new Flutter project By Yashu Chaudhary.
 
 ## Getting Started
 
