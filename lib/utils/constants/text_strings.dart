@@ -26,11 +26,11 @@ class PText {
   static const String username = "Username";
   static const String phoneNo = "Phone Number";
   static const String rememberMe = "Remember Me";
-  static const String forgetPassword = "Forget Passwoed?";
+  static const String forgetPassword = "Forget Pass?";
   static const String signIn = "Sign In";
   static const String createAccount = "Create Account";
-  static const String onSignInWith = "on sign in with";
-  static const String onSignUpWith = "on sign up with";
+  static const String orSignInWith = "or sign in with";
+  static const String orSignUpWith = "or sign up with";
   static const String iAgreeTo = "I agree to";
   static const String privacyPolicy = "Privacy Policy";
   static const String termsOfUse = "Terms of use";
@@ -43,7 +43,7 @@ class PText {
   static const String loginSubTitle =
       "Discover Limitless Choices and unmatched Convenience,";
   static const String signupTitle = "Let's create your account";
-  static const String forgetPasswordTitle = "Forget password";
+  static const String forgetPasswordTitle = "Forget pass?";
   static const String forgetPasswordSubTitle =
       "Don't worry sometimes people can forget too, enter your email and we will send you a password reset link.";
   static const String changeYourPasswordTitle = "Password Reset Email Sent";
@@ -58,5 +58,4 @@ class PText {
       "Your account successfully created!";
   static const String yourAccountCreatedSubTitle =
       "Welcome to you Ultimate shopping Destination: Your account is created, Unleash the Joy of Seamless Online Shopping!";
-  
 }

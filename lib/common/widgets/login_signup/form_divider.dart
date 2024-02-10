@@ -24,7 +24,7 @@ class PFormDivider extends StatelessWidget {
           ),
         ),
         Text(
-          PText.onSignInWith.capitalize!,
+          PText.orSignInWith.capitalize!,
           style: Theme.of(context).textTheme.labelMedium,
         ),
         Flexible(

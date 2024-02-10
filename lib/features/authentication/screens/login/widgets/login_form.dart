@@ -49,7 +49,9 @@ class PLoginForm extends StatelessWidget {
                           // ...............Forget Password.............
                           TextButton(
                             onPressed: () {},
-                            child: const Text(PText.forgetPassword),
+                            child: const Text(PText.forgetPassword,
+                            // style: TextStyle(fontSize: ),
+                            ),
                           )
                         ],
                       ),

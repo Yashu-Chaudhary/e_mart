@@ -18,7 +18,6 @@ class LoginScreen extends StatelessWidget {
           padding: PSpacingStyle.paddingWithAppBarHeight,
           child: Column(
             children: [
-              Column(),
               // ........Logo, Title & Sub-Title.......
               PLoginHeader(),
 
@@ -26,9 +25,9 @@ class LoginScreen extends StatelessWidget {
               PLoginForm(),
 
               // ............Divider..................
-              PFormDivider(dividerText: PText.onSignInWith),
+              PFormDivider(dividerText: PText.orSignInWith),
               SizedBox(
-                width: PSizes.spaceBtwItems,
+                height: PSizes.spaceBtwItems,
               ),
 
               // ................Footer................
