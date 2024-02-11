@@ -13,10 +13,6 @@ class PText {
   static const String onBoardingSubTitle3 =
       "From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!";
 
-  // ......................Home...............
-  static const String homeAppbarTitle = "Good day for shopping";
-  static const String homeAppbarSubTitle = "Taimoor Sikander";
-
   // ............Authentication Form Text...........
   static const String firstName = "First Name";
   static const String lastName = "Last Name";
@@ -62,4 +58,8 @@ class PText {
   static const String done = "Done";
   static const String yourAccountCreatedSubTitle =
       "Welcome to you Ultimate shopping Destination: Your account is created, Unleash the Joy of Seamless Online Shopping!";
+
+  // ......................Home...............
+  static const String homeAppbarTitle = "Good day for shopping";
+  static const String homeAppbarSubTitle = "Yashu Chaudhary";
 }
