@@ -19,7 +19,7 @@ class PAppBar extends StatelessWidget {
       child: AppBar(
         automaticallyImplyLeading: false,
         leading: showBackArrow 
-        ? IconButton(onPressed: () => Get.back(), icon: Icon(Iconsax.arrow_left))
+        ? IconButton(onPressed: () => Get.back(), icon: const Icon(Iconsax.arrow_left))
         : leadingIcon != null ? IconButton(onPressed: leadingOnPressed, icon: Icon(leadingIcon)) :null, 
         title: title,
         actions: actions,
@@ -27,6 +27,5 @@ class PAppBar extends StatelessWidget {
     );
   }
 
-  @override
   Size get preferredSize => Size.fromHeight(PDeviceUtils.getAppBarHeight());
 }

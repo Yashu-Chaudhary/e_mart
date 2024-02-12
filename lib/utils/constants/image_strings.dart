@@ -22,9 +22,22 @@ class PImages {
   // ...............Animations.................
   static const String productsIllustration = "";
   static const String productSaleIllustration = "";
-  static const String staticSuccessIllustration = "assets/images/animations/sammy-line-woman-gives-five-to-a-robot-with-artificial-intelligence.png";
+  static const String staticSuccessIllustration =
+      "assets/images/animations/sammy-line-woman-gives-five-to-a-robot-with-artificial-intelligence.png";
   static const String deliveredInPlaneIllustration = "";
   static const String deliveredEmailIllustration =
       "assets/images/animations/sammy-line-man-receives-a-mail.png";
   static const String verifyIllustration = "";
+
+  // ...............Category Icons..................
+  static const String sportIcon = "";
+  static const String clothIcon = "";
+  static const String shoeIcon =
+      "assets/icons/categories/icons8-slippers-64.png";
+  static const String cosmeticsIcon = "";
+  static const String animalIcon = "";
+  static const String toyIcon = "";
+  static const String furnitureIcon = "";
+  static const String jeweleryIcon = "";
+  static const String electronicIcon = "";
 }
