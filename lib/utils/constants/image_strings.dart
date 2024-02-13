@@ -42,7 +42,36 @@ class PImages {
   static const String electronicIcon = "";
 
   // ................Banners..................
-  static const String promoBanner1 = "assets/images/banners/banner-fashio-sale.jpeg";
-  static const String promoBanner2 = "assets/images/banners/shoes-banner-2.jpeg";
+  static const String promoBanner1 =
+      "assets/images/banners/banner-fashio-sale.jpeg";
+  static const String promoBanner2 =
+      "assets/images/banners/shoes-banner-2.jpeg";
   static const String promoBanner3 = "assets/images/banners/bannet-jacket.jpeg";
+
+  // ................Products.................
+  static const String productImage1 = "assets/images/products/nike-shoes.jpeg";
+  static const String productImage2 = "";
+  static const String productImage3 = "";
+  static const String productImage4 = "";
+  static const String productImage5 = "";
+  static const String productImage6 = "";
+  static const String productImage7 = "";
+  static const String productImage8 = "";
+  static const String productImage9 = "";
+  static const String productImage10 = "";
+  static const String productImage11 = "";
+  static const String productImage12 = "";
+  static const String productImage13 = "";
+  static const String productImage14 = "";
+  static const String productImage15 = "";
+  static const String productImage16 = "";
+  static const String productImage17 = "";
+  static const String productImage18 = "";
+  static const String productImage19 = "";
+  static const String productImage20 = "";
+  static const String productImage21 = "";
+  static const String productImage22 = "";
+  static const String productImage23 = "";
+  static const String productImage24 = "";  
+
 }
