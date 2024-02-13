@@ -40,4 +40,9 @@ class PImages {
   static const String furnitureIcon = "";
   static const String jeweleryIcon = "";
   static const String electronicIcon = "";
+
+  // ................Banners..................
+  static const String promoBanner1 = "assets/images/banners/banner-fashio-sale.jpeg";
+  static const String promoBanner2 = "assets/images/banners/shoes-banner-2.jpeg";
+  static const String promoBanner3 = "assets/images/banners/bannet-jacket.jpeg";
 }

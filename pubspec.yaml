@@ -31,6 +31,7 @@ dependencies:
   intl: ^0.18.1
   logger: ^2.0.1
   url_launcher: ^6.1.12
+  carousel_slider: ^4.2.1
   flutter_native_splash: ^2.3.2
   smooth_page_indicator: ^1.1.0
 
@@ -79,10 +80,12 @@ flutter:
   # ...................Local Assets..............#
   assets:
     - assets/logos/
-    - assets/icons/
+    - assets/icons/brands/
+    - assets/images/banners/
     - assets/images/on_boarding_images/
     - assets/images/animations/
     - assets/icons/categories/
+    - 
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,4 +1,3 @@
-
 import 'package:e_mart/utils/constants/color.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +8,7 @@ class PCircularContainer extends StatelessWidget {
     this.height = 400,
     this.radius = 400,
     this.padding = 0,
+    this.margin,
     this.child,
     this.backgroundColor = PColors.white,
   });
@@ -16,6 +16,7 @@ class PCircularContainer extends StatelessWidget {
   final double? height;
   final double radius;
   final double padding;
+  final EdgeInsets? margin;
   final Widget? child;
   final Color backgroundColor;
 
@@ -24,13 +25,13 @@ class PCircularContainer extends StatelessWidget {
     return Container(
       width: width,
       height: height,
+      margin: margin,
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(radius),
-          color: backgroundColor,
-      
-    ),
-    child: child,
+        borderRadius: BorderRadius.circular(radius),
+        color: backgroundColor,
+      ),
+      child: child,
     );
   }
 }
