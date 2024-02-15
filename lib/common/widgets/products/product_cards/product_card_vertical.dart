@@ -2,6 +2,7 @@ import 'package:e_mart/common/styles/shadows.dart';
 import 'package:e_mart/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:e_mart/common/widgets/icons/p_circular_icon.dart';
 import 'package:e_mart/common/widgets/images/p_rounded_image.dart';
+import 'package:e_mart/common/widgets/texts/p_brand_title_text_with_verified_icon.dart';
 import 'package:e_mart/common/widgets/texts/product_price_text.dart';
 import 'package:e_mart/common/widgets/texts/product_title_text.dart';
 import 'package:e_mart/utils/constants/color.dart';
@@ -77,66 +78,51 @@ class PProductCardVertical extends StatelessWidget {
             ),
 
             // .............Details...............
-            Padding(
-              padding: const EdgeInsets.only(left: PSizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: PSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const PProductTitleText(
+                  PProductTitleText(
                     title: 'Black And White Nike AIr Shoes',
                     smallSize: true,
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: PSizes.spaceBtwItems / 2,
                   ),
-                  Row(
-                    children: [
-                      Text(
-                        'Nike',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(
-                        width: PSizes.xs,
-                      ),
-                      const Icon(
-                        Iconsax.verify5,
-                        color: PColors.primary,
-                        size: PSizes.iconXs,
-                      ),
-                    ],
-                  ),
-                  // Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // .......Price.....
-                      const PProductPriceText(price: '77.7'),
-                      // ..........Add to Cart Button............
-                      Container(
-                        decoration: const BoxDecoration(
-                          color: PColors.dark,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(PSizes.cardRadiusMg),
-                            bottomRight:
-                                Radius.circular(PSizes.productImageRadius),
-                          ),
-                        ),
-                        child: const SizedBox(
-                            width: PSizes.iconLg * 1.2,
-                            height: PSizes.iconLg * 1.2,
-                            child: Center(
-                              child: Icon(
-                                Iconsax.add,
-                                color: PColors.white,
-                              ),
-                            )),
-                      ),
-                    ],
-                  )
+                  PBrandTitleWithVerifiedIcon(title: 'Nike',),
                 ],
               ),
+            ),
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // .......Price.....
+                const Padding(
+                  padding: EdgeInsets.only(left: PSizes.sm),
+                  child: PProductPriceText(price: '1777.7')),
+                // ..........Add to Cart Button............
+                Container(
+                  decoration: const BoxDecoration(
+                    color: PColors.dark,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(PSizes.cardRadiusMg),
+                      bottomRight: Radius.circular(PSizes.productImageRadius),
+                    ),
+                  ),
+                  child: const SizedBox(
+                    width: PSizes.iconLg * 1.2,
+                    height: PSizes.iconLg * 1.2,
+                    child: Center(
+                      child: Icon(
+                        Iconsax.add,
+                        color: PColors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             )
           ],
         ),
@@ -145,4 +131,3 @@ class PProductCardVertical extends StatelessWidget {
   }
 }
 
- 

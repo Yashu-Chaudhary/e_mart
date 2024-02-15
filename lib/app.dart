@@ -17,3 +17,19 @@ class App extends StatelessWidget {
     );
   }
 }
+
+class YashuChaudhary extends StatefulWidget {
+  const YashuChaudhary({super.key});
+
+  @override
+  State<YashuChaudhary> createState() => _YashuChaudharyState();
+}
+
+class _YashuChaudharyState extends State<YashuChaudhary> {
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      backgroundColor: Colors.blue,
+    );
+  }
+}

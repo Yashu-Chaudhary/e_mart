@@ -5,9 +5,9 @@ import 'package:iconsax/iconsax.dart';
 
 class PCartCounterIcon extends StatelessWidget {
   const PCartCounterIcon({
-    super.key, required this.iconColor, required this.onPressed,
+    super.key,  this.iconColor = PColors.white, required this.onPressed,
   });
-  final Color iconColor;
+  final Color? iconColor;
   final VoidCallback onPressed;
 
   @override
@@ -17,7 +17,7 @@ class PCartCounterIcon extends StatelessWidget {
         onPressed: () {},
         icon: const Icon(
           Iconsax.shopping_bag,
-          color: PColors.white,
+          color:PColors.white,
         ),
       ),
       Positioned(

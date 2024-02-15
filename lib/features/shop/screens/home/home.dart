@@ -80,12 +80,18 @@ class HomeScreen extends StatelessWidget {
                     PImages.promoBanner3
                   ],
                 ),
+                const SizedBox(height: PSizes.spaceBtwSections),
+
+                // ..............Heading...............
+
+                 PSectionHeading(title: 'Popular Products', onPressed: (){},),
+                const SizedBox(height: PSizes.spaceBtwSections,),
+
                 // ...................Popular Products.............
                 PGridLayout(
                   itemCount: 2,
                   itemBuilder: (_, index) => const PProductCardVertical(),
                 ),
-               
               ]),
               // .............
             ),

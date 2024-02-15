@@ -4,8 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-class PAppBar extends StatelessWidget {
-  const PAppBar({super.key, this.title,  this.showBackArrow = false, this.leadingIcon, this.actions, this.leadingOnPressed});
+class PAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const PAppBar(
+      {super.key,
+      this.title,
+      this.showBackArrow = false,
+      this.leadingIcon,
+      this.actions,
+      this.leadingOnPressed});
   final Widget? title;
   final bool showBackArrow;
   final IconData? leadingIcon;
@@ -15,12 +21,17 @@ class PAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:const EdgeInsets.symmetric(horizontal: PSizes.md),
+      padding: const EdgeInsets.symmetric(horizontal: PSizes.md),
       child: AppBar(
         automaticallyImplyLeading: false,
-        leading: showBackArrow 
-        ? IconButton(onPressed: () => Get.back(), icon: const Icon(Iconsax.arrow_left))
-        : leadingIcon != null ? IconButton(onPressed: leadingOnPressed, icon: Icon(leadingIcon)) :null, 
+        leading: showBackArrow
+            ? IconButton(
+                onPressed: () => Get.back(),
+                icon: const Icon(Iconsax.arrow_left))
+            : leadingIcon != null
+                ? IconButton(
+                    onPressed: leadingOnPressed, icon: Icon(leadingIcon))
+                : null,
         title: title,
         actions: actions,
       ),

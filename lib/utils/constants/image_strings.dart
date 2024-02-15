@@ -31,7 +31,7 @@ class PImages {
 
   // ...............Category Icons..................
   static const String sportIcon = "";
-  static const String clothIcon = "";
+  static const String clothIcon = "assets/images/products/cloth.png";
   static const String shoeIcon =
       "assets/icons/categories/icons8-slippers-64.png";
   static const String cosmeticsIcon = "";
