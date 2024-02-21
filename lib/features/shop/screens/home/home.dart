@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                     height: PSizes.spaceBtwSections,
                   ),
 
-                  // ..............Categories & Heading...........
+                  // ..............Categories ...........
 
                   Padding(
                     padding: EdgeInsets.only(left: PSizes.defaultSpace),
@@ -62,6 +62,8 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+
+                   SizedBox(height: PSizes.spaceBtwSections,)
                 ],
               ),
             ),

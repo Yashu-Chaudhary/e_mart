@@ -80,6 +80,7 @@ flutter:
   # ...................Local Assets..............#
   assets:
     - assets/logos/
+    - assets/images/user/
     - assets/icons/brands/
     - assets/images/banners/
     - assets/images/on_boarding_images/
