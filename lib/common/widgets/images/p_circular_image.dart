@@ -25,7 +25,7 @@ class PCircularImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool dark = PHelperFunctions.isDarkMode(context);
-    return Container(
+    return Container(      
       width: width,
       height: height,
       padding: const EdgeInsets.all(PSizes.sm),
@@ -33,12 +33,16 @@ class PCircularImage extends StatelessWidget {
         color: dark ? PColors.black : PColors.white,
         borderRadius: BorderRadius.circular(100),
       ),
-      child: Image(
-        fit: fit,
-        image: isNetworkImage
-            ? NetworkImage(image)
-            : AssetImage(image) as ImageProvider,
-        color: dark ? PColors.white : PColors.black,
+      child: ClipRRect(
+
+        borderRadius: BorderRadius.circular(100),
+        child: Image(
+          fit: fit,
+          image: isNetworkImage
+              ? NetworkImage(image)
+              : AssetImage(image) as ImageProvider,
+          // color: dark ? PColors.white : PColors.black,
+        ),
       ),
     );
   }
