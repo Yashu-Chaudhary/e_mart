@@ -49,9 +49,9 @@ class PImages {
   static const String promoBanner3 = "assets/images/banners/bannet-jacket.jpeg";
 
   // ................Products.................
-  static const String productImage1 = "assets/images/products/nike-shoes.jpeg";
-  static const String productImage2 = "";
-  static const String productImage3 = "";
+  static const String productImage1 = "assets/images/products/shoes1.webp";
+  static const String productImage2 = "assets/images/products/shoes2.webp";
+  static const String productImage3 = "assets/images/products/shoes3.webp";
   static const String productImage4 = "";
   static const String productImage5 = "";
   static const String productImage6 = "";
