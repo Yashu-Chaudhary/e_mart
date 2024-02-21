@@ -95,6 +95,7 @@ class PProductCardVertical extends StatelessWidget {
               ),
             ),
             const Spacer(),
+            
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
