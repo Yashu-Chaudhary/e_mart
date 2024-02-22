@@ -9,7 +9,6 @@ import 'package:e_mart/utils/constants/image_strings.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:e_mart/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class PProductMetaData extends StatelessWidget {
   const PProductMetaData({super.key});
