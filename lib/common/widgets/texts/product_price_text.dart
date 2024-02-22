@@ -4,7 +4,7 @@ class PProductPriceText extends StatelessWidget {
   const PProductPriceText({
     super.key,
     required this.price,
-    this.currencySign = 'Rs.',
+    this.currencySign = 'Rs. ',
     this.maxLines = 1,
     this.isLarge = false,
     this.lineThrough = false,

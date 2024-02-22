@@ -3,17 +3,18 @@ import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class PRoundedContainer extends StatelessWidget {
-  const PRoundedContainer(
-      {super.key,
-      this.width,
-      this.height,
-      this.radius = PSizes.cardRadiusLg,
-      this.child,
-      this.showBorder = false,
-      this.borderColor = PColors.borderPrimary,
-      this.backgroundColor = PColors.white,
-      this.padding,
-      this.margin});
+  const PRoundedContainer({
+    super.key,
+    this.width,
+    this.height,
+    this.radius = PSizes.cardRadiusLg,
+    this.child,
+    this.showBorder = false,
+    this.borderColor = PColors.borderPrimary,
+    this.backgroundColor = PColors.white,
+    this.padding,
+    this.margin,
+  });
 
   final double? width;
   final double? height;
