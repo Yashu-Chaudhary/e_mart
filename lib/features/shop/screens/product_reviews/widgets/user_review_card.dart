@@ -36,7 +36,7 @@ class UserReviewCard extends StatelessWidget {
         // -------------Review----------
         Row(
           children: [
-            PRatingBarIndicator(rating: 4),
+            const PRatingBarIndicator(rating: 4),
             const SizedBox(width: PSizes.spaceBtwItems),
             Text('01 Jan, 2024', style: Theme.of(context).textTheme.bodyMedium),
           ],

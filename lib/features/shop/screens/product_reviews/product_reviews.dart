@@ -3,9 +3,7 @@ import 'package:e_mart/common/widgets/products/ratings/rating_indicator.dart';
 import 'package:e_mart/features/shop/screens/product_reviews/widgets/rating_progress_indicator.dart';
 import 'package:e_mart/features/shop/screens/product_reviews/widgets/user_review_card.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ProductReviewsScreen extends StatelessWidget {
   const ProductReviewsScreen({super.key});
@@ -16,6 +14,7 @@ class ProductReviewsScreen extends StatelessWidget {
       //  ----------appbar-------------
       appBar: const PAppBar(
         title: Text('Reviews & Ratings'),
+        showBackArrow: true,
       ),
       // -----Body---------------
       body: SingleChildScrollView(
@@ -40,8 +39,8 @@ class ProductReviewsScreen extends StatelessWidget {
               const SizedBox(height: PSizes.spaceBtwSections),
 
               // --------User Reviews List------------
-              UserReviewCard(),
-              UserReviewCard()
+              const UserReviewCard(),
+              const UserReviewCard()
             ],
           ),
         ),
