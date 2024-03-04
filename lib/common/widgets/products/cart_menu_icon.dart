@@ -1,11 +1,14 @@
-
+import 'package:e_mart/features/shop/screens/cart/cart.dart';
 import 'package:e_mart/utils/constants/color.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class PCartCounterIcon extends StatelessWidget {
   const PCartCounterIcon({
-    super.key,  this.iconColor = PColors.white, required this.onPressed,
+    super.key,
+    this.iconColor = PColors.white,
+    required this.onPressed,
   });
   final Color? iconColor;
   final VoidCallback onPressed;
@@ -14,10 +17,10 @@ class PCartCounterIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(children: [
       IconButton(
-        onPressed: () {},
+        onPressed: () => Get.to(() => const CartScreen()),
         icon: const Icon(
           Iconsax.shopping_bag,
-          color:PColors.white,
+          color: PColors.white,
         ),
       ),
       Positioned(

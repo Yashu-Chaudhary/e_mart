@@ -2,8 +2,8 @@
 
 class PImages {
   // .................App logos....................
-  static const String darkAppLogo = "assets/logos/logo-white-theme.png";
-  static const String lightAppLogo = "assets/logos/logo-dark-theme.png";
+  static const String darkAppLogo = "assets/logos/light_theme_logo.png";
+  static const String lightAppLogo = "assets/logos/dark_thme_logo.png";
 
   // ...................Social logos...................
   static const String google =

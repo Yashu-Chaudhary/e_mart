@@ -1,10 +1,8 @@
 import 'package:e_mart/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:e_mart/utils/constants/color.dart';
-import 'package:e_mart/utils/constants/enums.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:e_mart/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
 class PSingleAddress extends StatelessWidget {
@@ -55,7 +53,7 @@ class PSingleAddress extends StatelessWidget {
               const SizedBox(height: PSizes.sm / 2),
               const Text('+91 7906277120', maxLines: 1, overflow: TextOverflow.ellipsis),
               const SizedBox(height: PSizes.sm / 2),
-              Text(' Local Colony Rd, 53 A Ganesh Puram Colony, Bairaj Road, near लक्ष्मी गार्डन, Gokul, Mathura, Uttar Pradesh 281006',softWrap: true,),
+              const Text(' Local Colony Rd, 53 A Ganesh Puram Colony, Bairaj Road, near लक्ष्मी गार्डन, Gokul, Mathura, Uttar Pradesh 281006',softWrap: true,),
 
 
             ],

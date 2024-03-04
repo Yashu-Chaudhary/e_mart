@@ -1,8 +1,6 @@
 import 'package:e_mart/common/widgets/appbar/appbar.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
 class AddNewAddressScreen extends StatelessWidget {
@@ -17,7 +15,7 @@ class AddNewAddressScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(PSizes.defaultSpace),
+          padding: const EdgeInsets.all(PSizes.defaultSpace),
           child: Form(
               child: Column(
             children: [
@@ -84,7 +82,7 @@ class AddNewAddressScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 
-                child: ElevatedButton(onPressed: () {}, child: Text('Save')),
+                child: ElevatedButton(onPressed: () {}, child: const Text('Save')),
               ),
             ],
           )),
