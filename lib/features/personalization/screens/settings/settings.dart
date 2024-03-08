@@ -5,6 +5,7 @@ import 'package:e_mart/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:e_mart/common/widgets/texts/section_heading.dart';
 import 'package:e_mart/features/personalization/screens/address/address.dart';
 import 'package:e_mart/features/personalization/screens/profile/profile.dart';
+import 'package:e_mart/features/shop/screens/order/order.dart';
 import 'package:e_mart/utils/constants/color.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -73,11 +74,13 @@ class SettingsScreen extends StatelessWidget {
                     icon: Iconsax.shopping_cart,
                     title: 'My Cart',
                     subTitle: 'Add, remove products and move to checkout',
+                    
                   ),
-                  const PSettingsMenuTile(
+                  PSettingsMenuTile(
                     icon: Iconsax.bag_tick,
                     title: 'My Orders',
                     subTitle: 'In-progress and Completed Orders',
+                    onTap: () => Get.to(() => const OrderScreen()),
                   ),
                   const PSettingsMenuTile(
                     icon: Iconsax.bank,
