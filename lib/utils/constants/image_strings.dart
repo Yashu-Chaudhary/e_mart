@@ -48,6 +48,23 @@ class PImages {
       "assets/images/banners/shoes-banner-2.jpeg";
   static const String promoBanner3 = "assets/images/banners/bannet-jacket.jpeg";
 
+  // ---------------Product Reviews-------------
+  static const String userProfileImage1 = "";
+  static const String userProfileImage2 = "";
+  static const String userProfileImage3 = "";
+
+  // ---------------Payment Methods-------------
+
+  static const String applePay = "assets/images/on_boarding_images/facebook.jpg";
+  static const String googelPay = "assets/images/on_boarding_images/facebook.jpg";
+  static const String creditCard = "assets/images/on_boarding_images/facebook.jpg";
+  static const String masterCard = "assets/images/on_boarding_images/facebook.jpg";
+  static const String paypal = "assets/images/on_boarding_images/facebook.jpg";
+  static const String visa = "assets/images/on_boarding_images/facebook.jpg";
+  static const String paystack = "assets/images/on_boarding_images/facebook.jpg";
+  static const String paytm = "assets/images/on_boarding_images/facebook.jpg";
+  static const String successfulPaymentIcon = "assets/images/on_boarding_images/facebook.jpg";
+
   // ..................User....................
   static const String user = "assets/images/user/profile.png";
 

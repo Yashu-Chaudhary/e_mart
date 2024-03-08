@@ -1,9 +1,9 @@
 import 'package:e_mart/common/widgets/appbar/appbar.dart';
-import 'package:e_mart/common/widgets/products/cart/add_remove_button.dart';
-import 'package:e_mart/common/widgets/products/cart/cart_meanu_icon.dart';
-import 'package:e_mart/common/widgets/texts/product_price_text.dart';
+import 'package:e_mart/features/shop/screens/cart/widgets/cart_item.dart';
+import 'package:e_mart/features/shop/screens/checkout/checkout.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -18,51 +18,22 @@ class CartScreen extends StatelessWidget {
           style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(PSizes.defaultSpace),
+      body: const Padding(
+        padding: EdgeInsets.all(PSizes.defaultSpace),
+        
         // -- Items in Cart
-        child: ListView.separated(
-          shrinkWrap: true,
-          separatorBuilder: (_, __) => const SizedBox(
-            height: PSizes.spaceBtwSections,
-          ),
-          itemCount: 10,
-          itemBuilder: (_, index) => const Column(
-            children: [
-              // --------Cart Item-------
-              PCartItem(),
-              SizedBox(
-                height: PSizes.spaceBtwSections,
-              ),
-
-              // -------Add Remove Buttom Row with total Price--------
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      // -----Extra Space---------
-                      SizedBox(width: 70),
-
-                      // ----------Add Remove buttons----------
-                      PProductQuantityWithAddRemooveButton(),
-                    ],
-                  ),
-                  
-                  PProductPriceText(price: '256')
-                ],
-              ),
-            ],
-          ),
-        ),
+        child: PCartItems(),
       ),
+
+      // --Checkout Button
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(PSizes.defaultSpace),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () => Get.to(() => const CheckoutScreen()),
           child: const Text('Checkout Rs.256.0'),
         ),
       ),
     );
   }
 }
+
