@@ -1,4 +1,3 @@
-import 'package:e_mart/common/styles/shadows.dart';
 import 'package:e_mart/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:e_mart/common/widgets/icons/p_circular_icon.dart';
 import 'package:e_mart/common/widgets/images/p_rounded_image.dart';
@@ -9,9 +8,7 @@ import 'package:e_mart/utils/constants/color.dart';
 import 'package:e_mart/utils/constants/image_strings.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:e_mart/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
 class PProductCardHorizontal extends StatelessWidget {

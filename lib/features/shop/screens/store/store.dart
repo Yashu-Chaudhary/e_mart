@@ -5,11 +5,13 @@ import 'package:e_mart/common/widgets/custom_shapes/containers/search_container.
 import 'package:e_mart/common/widgets/layouts/grid_layout.dart';
 import 'package:e_mart/common/widgets/products/cart_menu_icon.dart';
 import 'package:e_mart/common/widgets/texts/section_heading.dart';
+import 'package:e_mart/features/shop/screens/brand/all_brands.dart';
 import 'package:e_mart/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:e_mart/utils/constants/color.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:e_mart/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
@@ -64,7 +66,7 @@ class StoreScreen extends StatelessWidget {
 
                       // ..............Feature Brands..........
                       PSectionHeading(
-                          title: 'Featured Brands', onPressed: () {}),
+                          title: 'Featured Brands', onPressed: () => Get.to(() => const AllBrandsScreen())),
 
                       const SizedBox(
                         height: PSizes.spaceBtwItems / 1.5,
