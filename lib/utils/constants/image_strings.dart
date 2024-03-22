@@ -94,4 +94,7 @@ class PImages {
   static const String productImage22 = "";
   static const String productImage23 = "";
   static const String productImage24 = "";
+
+  ///
+  static const String docerAnimation = "";
 }

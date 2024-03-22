@@ -2,7 +2,7 @@ import 'package:e_mart/features/authentication/controllers/onboarding/widgets/on
 import 'package:e_mart/features/authentication/controllers/onboarding/widgets/onboarding_next_button.dart';
 import 'package:e_mart/features/authentication/controllers/onboarding/widgets/onboarding_page.dart';
 import 'package:e_mart/features/authentication/controllers/onboarding/widgets/onboarding_skip.dart';
-import 'package:e_mart/features/authentication/controllers/onboarding_controller.dart';
+import 'package:e_mart/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:e_mart/utils/constants/image_strings.dart';
 import 'package:e_mart/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';

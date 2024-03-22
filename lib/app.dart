@@ -1,3 +1,4 @@
+import 'package:e_mart/bindings/general_bindings.dart';
 import 'package:e_mart/utils/constants/color.dart';
 import 'package:e_mart/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: PAppTheme.lightTheme,
       darkTheme: PAppTheme.darkTheme,
+      initialBinding: GeneralBingings(),
       debugShowCheckedModeBanner: false,
       home: const Scaffold(
           backgroundColor: PColors.primary,
