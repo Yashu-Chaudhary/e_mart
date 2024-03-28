@@ -1,5 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_mart/features/personalization/models/user_model.dart';
+import 'package:e_mart/utils/exceptions/firebase_exceptions.dart';
+import 'package:e_mart/utils/exceptions/format_exceptions.dart';
+import 'package:e_mart/utils/exceptions/platform_exceptions.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +19,7 @@ class UserRepository extends GetxController {
     } on FirebaseException catch (e) {
       throw PFirebaseException(e.code).message;
     } on FormatException catch (_) {
-      throw const PFormatException();
+      throw const PFormatExcepton();
     } on PlatformException catch (e) {
       throw PPlatformException(e.code).message;
     } catch (e) {
@@ -32,12 +35,7 @@ class UserRepository extends GetxController {
 
 
 // ----------------------------------
-PFirebaseException(String code) {}
-  
-  PPlatformException(String code) {}
+
 
 }
 
-class PFormatException {
-  const PFormatException();
-}

@@ -1,6 +1,11 @@
-import 'package:e_mart/data/repositories/user/user_repository.dart';
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:e_mart/features/authentication/screens/login/login.dart';
 import 'package:e_mart/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:e_mart/utils/exceptions/firebase_auth_exceptions.dart';
+import 'package:e_mart/utils/exceptions/firebase_exceptions.dart';
+import 'package:e_mart/utils/exceptions/format_exceptions.dart';
+import 'package:e_mart/utils/exceptions/platform_exceptions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -49,20 +54,31 @@ class AuthenticationRepository extends GetxController {
       throw PFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
       throw PFirebaseException(e.code).message;
-    }on FormatException catch (_) {
-      throw const PFormatException();
+    } on FormatException catch (_) {
+      throw const PFormatExcepton();
     } on PlatformException catch (e) {
       throw PPlatformException(e.code).message;
-    }catch (e) {
-      throw 'Something went wrong. Please try again'; 
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
     }
   }
-  
- 
-
-  ///[ReAuthenticate] - ReAuthenticate User
 
   ///[EmailVerification] - MAIL VERIFICATION
+  Future<void> sendEmailVerification() async {
+    try {
+      await _auth.currentUser?.sendEmailVerification();
+    } on FirebaseAuthException catch (e) {
+      throw PFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw PFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const PFormatExcepton();
+    } on PlatformException catch (e) {
+      throw PPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
 
   /// [EmailAuthentication] - FORGET PASSWORD
 
@@ -77,11 +93,7 @@ class AuthenticationRepository extends GetxController {
   /// [LogoutUser] - Valid for any authentication.
 
   /// DELETE USER -Remove user Auth and Firestore Account.
-  /// 
+  ///
   // / ----------------------------------
-   PFirebaseAuthException(String code) {}
   
-  PFirebaseException(String code) {}
-  
-  PPlatformException(String code) {}
 }
