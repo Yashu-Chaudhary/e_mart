@@ -28,6 +28,8 @@ class PImages {
   static const String deliveredEmailIllustration =
       "assets/images/animations/sammy-line-man-receives-a-mail.png";
   static const String verifyIllustration = "";
+  static const String successfullyRegisterAnimation = "";
+
 
   // ...............Category Icons..................
   static const String sportIcon = "";
@@ -56,15 +58,21 @@ class PImages {
 
   // ---------------Payment Methods-------------
 
-  static const String applePay = "assets/images/on_boarding_images/facebook.jpg";
-  static const String googelPay = "assets/images/on_boarding_images/facebook.jpg";
-  static const String creditCard = "assets/images/on_boarding_images/facebook.jpg";
-  static const String masterCard = "assets/images/on_boarding_images/facebook.jpg";
+  static const String applePay =
+      "assets/images/on_boarding_images/facebook.jpg";
+  static const String googelPay =
+      "assets/images/on_boarding_images/facebook.jpg";
+  static const String creditCard =
+      "assets/images/on_boarding_images/facebook.jpg";
+  static const String masterCard =
+      "assets/images/on_boarding_images/facebook.jpg";
   static const String paypal = "assets/images/on_boarding_images/facebook.jpg";
   static const String visa = "assets/images/on_boarding_images/facebook.jpg";
-  static const String paystack = "assets/images/on_boarding_images/facebook.jpg";
+  static const String paystack =
+      "assets/images/on_boarding_images/facebook.jpg";
   static const String paytm = "assets/images/on_boarding_images/facebook.jpg";
-  static const String successfulPaymentIcon = "assets/images/on_boarding_images/facebook.jpg";
+  static const String successfulPaymentIcon =
+      "assets/images/on_boarding_images/facebook.jpg";
 
   // ..................User....................
   static const String user = "assets/images/user/profile.png";
@@ -96,5 +104,6 @@ class PImages {
   static const String productImage24 = "";
 
   ///
-  static const String docerAnimation = "";
+  static const String docerAnimation =
+      "assets/images/banners/bannet-jacket.jpeg";
 }

@@ -30,11 +30,9 @@ class AuthenticationRepository extends GetxController {
 // Function to Show Relevant Screen
   screenRedirect() async {
     //  Local Storage
-    if (kDebugMode) {
-      print('==============Get Storage====================');
-      print(deviceStorage.read('IsFirstTime'));
-    }
+    
     deviceStorage.writeIfNull('IsFirstTime', true);
+    // check if it's the first time launching the app
     deviceStorage.read('IsFirstTime') != true
         ? Get.offAll(() => const LoginScreen())
         : Get.offAll(() => const OnBoardingScreen());
