@@ -17,7 +17,7 @@ class VerifyEmailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put( VerifyEmailController());
     return Scaffold(
-      // The closse incon in the app bar is used to log out the user and redirect them to the login screen.
+      // The close incon in the app bar is used to log out the user and redirect them to the login screen.
       // This approach is taken to handle scenarios where the user enters the registration process,
       // and  the date is sotred. Upon reopening the app, it checks if the email is verified.
       // If not verified, the app always navigates to teh verification screen.

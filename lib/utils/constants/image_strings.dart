@@ -30,7 +30,6 @@ class PImages {
   static const String verifyIllustration = "";
   static const String successfullyRegisterAnimation = "";
 
-
   // ...............Category Icons..................
   static const String sportIcon = "";
   static const String clothIcon = "assets/images/products/cloth.png";
@@ -105,5 +104,5 @@ class PImages {
 
   ///
   static const String docerAnimation =
-      "assets/images/banners/bannet-jacket.jpeg";
+      "assets/images/animations/processing.json";
 }

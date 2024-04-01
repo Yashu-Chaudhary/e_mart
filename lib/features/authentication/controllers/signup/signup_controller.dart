@@ -27,8 +27,8 @@ class SignupController extends GetxController {
   void signup() async {
     try {
       // Start Loading
-      PFullScreenLoader.openLoadingDialog(
-          'We are processing your information...', PImages.docerAnimation);
+      // PFullScreenLoader.openLoadingDialog(
+      //     'We are processing your information...', PImages.docerAnimation);
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
@@ -67,7 +67,7 @@ class SignupController extends GetxController {
       await userRepository.saveUserRecord(newUser);
 
       // Remove Loader
-      PFullScreenLoader.stopLoading();
+      // PFullScreenLoader.stopLoading();
 
       // Show Success Message
       PLoaders.successSnackBar(
@@ -75,7 +75,9 @@ class SignupController extends GetxController {
           message: 'Your account has been created! Vrify email to continue.');
 
       // Move to Verify Email Screen
-      Get.to(() => VerifyEmailScreen(email: email.text.trim(),));
+      Get.to(() => VerifyEmailScreen(
+            email: email.text.trim(),
+          ));
     } catch (e) {
       // Remove Loader
       PFullScreenLoader.stopLoading();

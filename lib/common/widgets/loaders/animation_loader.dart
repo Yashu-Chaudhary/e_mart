@@ -3,7 +3,16 @@ import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
+// A widget for displaying an animated loading indicator with optional text and action button.
 class PAnimationLoaderWidget extends StatelessWidget {
+  // Default constructor for the TAnimationLoaderWidget.
+
+  // Parameters:
+  //  - text: The text to be displayed below the animation.
+  //  - animation: The path to the Lottie animation file.
+  //  - showAction:Whether to show an action button below the text.
+  //  - actionText: The text to be displyed on the action button.
+  //  - onActionPressed: Callback function to be executed when the action button is pressed.
   const PAnimationLoaderWidget({
     super.key,
     required this.text,
@@ -25,7 +34,8 @@ class PAnimationLoaderWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Lottie.asset(animation, width: MediaQuery.of(context).size.width * 0.8),
+          Lottie.asset(animation,
+              width: MediaQuery.of(context).size.width * 0.8),
           const SizedBox(height: PSizes.defaultSpace),
           Text(
             text,
@@ -34,16 +44,22 @@ class PAnimationLoaderWidget extends StatelessWidget {
           ),
           const SizedBox(height: PSizes.defaultSpace),
           showAction
-          ? SizedBox(width: 250, child: OutlinedButton(
-            onPressed: onActionPressed,
-            style: OutlinedButton.styleFrom(backgroundColor: PColors.dark),
-            child: Text(
-              actionText!,
-              style: Theme.of(context).textTheme.bodyMedium!.apply(color: PColors.light),
-            ),
-          ),)
-          :
-          const SizedBox(),
+              ? SizedBox(
+                  width: 250,
+                  child: OutlinedButton(
+                    onPressed: onActionPressed,
+                    style:
+                        OutlinedButton.styleFrom(backgroundColor: PColors.dark),
+                    child: Text(
+                      actionText!,
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyMedium!
+                          .apply(color: PColors.light),
+                    ),
+                  ),
+                )
+              : const SizedBox(),
         ],
       ),
     );

@@ -7,7 +7,6 @@ import 'package:e_mart/utils/exceptions/firebase_exceptions.dart';
 import 'package:e_mart/utils/exceptions/format_exceptions.dart';
 import 'package:e_mart/utils/exceptions/platform_exceptions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
@@ -23,7 +22,9 @@ class AuthenticationRepository extends GetxController {
   /// Called from main.dart on app launch
   @override
   void onReady() {
+    // Remove the natibr splash screen
     FlutterNativeSplash.remove();
+    // redirect to the appropriate screen
     screenRedirect();
   }
 
