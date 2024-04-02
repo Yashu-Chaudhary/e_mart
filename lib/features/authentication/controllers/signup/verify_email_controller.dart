@@ -58,7 +58,7 @@ class VerifyEmailController extends GetxController {
       Get.off(() => SuccessScreen(
             image: PImages.successfullyRegisterAnimation,
             title: PText.yourAccountCreatedTitle,
-            subTitle: PText.changeYourPasswordSubTitle,
+            subTitle: PText.yourAccountCreatedSubTitle,
             onPressed: () => AuthenticationRepository.instance.screenRedirect(),
           ));
     }

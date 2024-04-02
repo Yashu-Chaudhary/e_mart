@@ -1,4 +1,4 @@
-import 'package:e_mart/common/widgets/succiss_screen/success_screen.dart';
+import 'package:e_mart/data/repositories/authentication/authentication_repository.dart';
 import 'package:e_mart/features/authentication/controllers/signup/verify_email_controller.dart';
 import 'package:e_mart/features/authentication/screens/login/login.dart';
 import 'package:e_mart/utils/constants/image_strings.dart';
@@ -15,7 +15,7 @@ class VerifyEmailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put( VerifyEmailController());
+    final controller = Get.put(VerifyEmailController());
     return Scaffold(
       // The close incon in the app bar is used to log out the user and redirect them to the login screen.
       // This approach is taken to handle scenarios where the user enters the registration process,
@@ -24,9 +24,10 @@ class VerifyEmailScreen extends StatelessWidget {
 
       appBar: AppBar(
         automaticallyImplyLeading: false,
+        
         actions: [
           IconButton(
-              onPressed: () => Get.offAll(() => const LoginScreen()),
+              onPressed: () => AuthenticationRepository.instance.logout(),
               icon: const Icon(CupertinoIcons.clear))
         ],
       ),
@@ -56,7 +57,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 height: PSizes.spaceBtwItems,
               ),
               Text(
-                email ??'' ,
+                email ?? '',
                 style: Theme.of(context).textTheme.labelLarge,
                 textAlign: TextAlign.center,
               ),
@@ -76,14 +77,7 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.to(
-                    () => SuccessScreen(
-                      image: PImages.staticSuccessIllustration,
-                      title: PText.yourAccountCreatedTitle,
-                      subTitle: PText.yourAccountCreatedSubTitle,
-                      onPressed: () => Get.to(() => const LoginScreen()),
-                    ),
-                  ),
+                  onPressed: () => controller.checkEmailVerificationStatus(),
                   child: const Text(PText.pContinue),
                 ),
               ),
@@ -93,7 +87,7 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () => controller.sendEmailVerification(),
                   child: const Text(PText.resendEmail),
                 ),
               ),

@@ -28,7 +28,6 @@ class PImages {
   static const String deliveredEmailIllustration =
       "assets/images/animations/sammy-line-man-receives-a-mail.png";
   static const String verifyIllustration = "";
-  static const String successfullyRegisterAnimation = "";
 
   // ...............Category Icons..................
   static const String sportIcon = "";
@@ -104,5 +103,7 @@ class PImages {
 
   ///
   static const String docerAnimation =
+      "assets/images/animations/processing.json";
+  static const String successfullyRegisterAnimation =
       "assets/images/animations/processing.json";
 }
