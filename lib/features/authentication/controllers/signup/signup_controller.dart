@@ -2,6 +2,7 @@ import 'package:e_mart/data/repositories/authentication/authentication_repositor
 import 'package:e_mart/data/repositories/user/user_repository.dart';
 import 'package:e_mart/features/authentication/screens/signup/verify_email.dart';
 import 'package:e_mart/features/personalization/models/user_model.dart';
+import 'package:e_mart/utils/constants/image_strings.dart';
 import 'package:e_mart/utils/helpers/network_manager.dart';
 import 'package:e_mart/utils/popups/full_screen_loader.dart';
 import 'package:e_mart/utils/popups/loaders.dart';
@@ -26,15 +27,21 @@ class SignupController extends GetxController {
   void signup() async {
     try {
       // Start Loading
-      // PFullScreenLoader.openLoadingDialog(
-      //     'We are processing your information...', PImages.docerAnimation);
+      PFullScreenLoader.openLoadingDialog(
+          'We are processing your information...', PImages.docerAnimation);
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
-      if (!isConnected) return;
+      if (!isConnected) {
+        PFullScreenLoader.stopLoading();
+        return;
+      }
 
       // Form Validation
-      if (!signupFormKey.currentState!.validate()) return;
+      if (!signupFormKey.currentState!.validate()) {
+        PFullScreenLoader.stopLoading();
+        return;
+      }
 
       // Privacy Policy Check
       if (!privacyPolicy.value) {
@@ -43,6 +50,7 @@ class SignupController extends GetxController {
           message:
               'In order to create account, you must have to read and accept the Privacy Policy & Terms of Use.',
         );
+        PFullScreenLoader.stopLoading();
         return;
       }
 
@@ -66,7 +74,7 @@ class SignupController extends GetxController {
       await userRepository.saveUserRecord(newUser);
 
       // Remove Loader
-      // PFullScreenLoader.stopLoading();
+      PFullScreenLoader.stopLoading();
 
       // Show Success Message
       PLoaders.successSnackBar(

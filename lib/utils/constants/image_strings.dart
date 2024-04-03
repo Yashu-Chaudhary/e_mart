@@ -19,6 +19,10 @@ class PImages {
   static const onBoardingImage3 =
       'assets/images/on_boarding_images/sammy-line-delivering.gif';
 
+      // success screen animation
+      static const String successfullyRegisterAnimation =
+      "assets/images/user/profile.png";
+
   // ...............Animations.................
   static const String productsIllustration = "";
   static const String productSaleIllustration = "";
@@ -101,9 +105,8 @@ class PImages {
   static const String productImage23 = "";
   static const String productImage24 = "";
 
-  ///
+  /// thsi is the loader image 
   static const String docerAnimation =
       "assets/images/animations/processing.json";
-  static const String successfullyRegisterAnimation =
-      "assets/images/animations/processing.json";
+  
 }
