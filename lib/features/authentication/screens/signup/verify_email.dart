@@ -1,6 +1,5 @@
 import 'package:e_mart/data/repositories/authentication/authentication_repository.dart';
 import 'package:e_mart/features/authentication/controllers/signup/verify_email_controller.dart';
-import 'package:e_mart/features/authentication/screens/login/login.dart';
 import 'package:e_mart/utils/constants/image_strings.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:e_mart/utils/constants/text_strings.dart';
