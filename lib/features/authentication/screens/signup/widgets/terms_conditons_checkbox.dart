@@ -16,6 +16,7 @@ class PTermsAndConditionCheckbox extends StatelessWidget {
     final controller = SignupController.instance;
     final dark = PHelperFunctions.isDarkMode(context);
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         SizedBox(
             width: 24,
@@ -26,9 +27,9 @@ class PTermsAndConditionCheckbox extends StatelessWidget {
                   onChanged: (vlaue) => controller.privacyPolicy.value =
                       !controller.privacyPolicy.value),
             )),
-        const SizedBox(
-          width: PSizes.spaceBtwItems,
-        ),
+        // const SizedBox(
+        //   width: PSizes.spaceBtwItems,
+        // ),
         Text.rich(
           TextSpan(children: [
             TextSpan(
@@ -47,11 +48,12 @@ class PTermsAndConditionCheckbox extends StatelessWidget {
               style: Theme.of(context).textTheme.bodySmall,
             ),
             TextSpan(
-                text: '${PText.termsOfUse} ',
-                style: Theme.of(context).textTheme.bodyMedium!.apply(
-                    color: dark ? PColors.white : PColors.primary,
-                    decoration: TextDecoration.underline,
-                    decorationColor: dark ? PColors.white : PColors.primary)),
+              text: '${PText.termsOfUse} ',
+              style: Theme.of(context).textTheme.bodyMedium!.apply(
+                  color: dark ? PColors.white : PColors.primary,
+                  decoration: TextDecoration.underline,
+                  decorationColor: dark ? PColors.white : PColors.primary),
+            ),
           ]),
         ),
       ],

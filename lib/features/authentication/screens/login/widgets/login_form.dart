@@ -1,7 +1,6 @@
 import 'package:e_mart/features/authentication/controllers/login/login_controller.dart';
 import 'package:e_mart/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:e_mart/features/authentication/screens/signup/signup.dart';
-import 'package:e_mart/navigation_menu.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:e_mart/utils/constants/text_strings.dart';
 import 'package:e_mart/utils/validators/validation.dart';

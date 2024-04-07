@@ -99,8 +99,11 @@ class PSignupForm extends StatelessWidget {
                   labelText: PText.password,
                   prefixIcon: const Icon(Iconsax.password_check),
                   suffixIcon: IconButton(
-                    onPressed: () => controller.hidePassword.value =!controller.hidePassword.value,
-                    icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye),
+                    onPressed: () => controller.hidePassword.value =
+                        !controller.hidePassword.value,
+                    icon: Icon(controller.hidePassword.value
+                        ? Iconsax.eye_slash
+                        : Iconsax.eye),
                   ),
                 ),
               ),
@@ -121,12 +124,12 @@ class PSignupForm extends StatelessWidget {
                 child: const Text(PText.createAccount),
               ),
             ),
-            const SizedBox(
-              height: PSizes.spaceBtwItems,
-            ),
+            const SizedBox(height: PSizes.spaceBtwItems),
 
             // ..................Divider...............
             PFormDivider(dividerText: PText.orSignUpWith.capitalize!),
+            const SizedBox(height: PSizes.spaceBtwItems),
+
 
             // .................Social Buttons...........
             const PSocialButtons(),

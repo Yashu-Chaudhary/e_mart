@@ -16,6 +16,8 @@ class LoginController extends GetxController {
   final password = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
 
+  get userController => null;
+
   // @override
   // void onInit() {
   //   email.text = localStorage.read('REMEMBER_ME_EMAIL');
@@ -50,10 +52,42 @@ class LoginController extends GetxController {
       }
 
       // Login user using EMail & password Authentication
-      final UserCredentials = await AuthenticationRepository.instance
+      final userCredentials = await AuthenticationRepository.instance
           .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
       // Remove Loader
+      PFullScreenLoader.stopLoading();
+
+      // Redirect
+      AuthenticationRepository.instance.screenRedirect();
+    } catch (e) {
+      PFullScreenLoader.stopLoading();
+      PLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
+    }
+  }
+
+  // -- Google SignIn Autentication
+  Future<void> googleSignIn() async {
+    try {
+      // Start Loading
+      PFullScreenLoader.openLoadingDialog(
+          'Logging you in...', PImages.docerAnimation);
+
+      // Check Internet Connectivity
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        PFullScreenLoader.stopLoading();
+        return;
+      }
+
+      // Google Authentication
+      final userCredentials =
+          await AuthenticationRepository.instance.siginInWithGoogle();
+
+      // Save User Record
+      await userController.saveUserRecord(userCredentials);
+
+      // Remove loder
       PFullScreenLoader.stopLoading();
 
       // Redirect
