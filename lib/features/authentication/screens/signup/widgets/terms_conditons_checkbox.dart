@@ -1,6 +1,5 @@
 import 'package:e_mart/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:e_mart/utils/constants/color.dart';
-import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:e_mart/utils/constants/text_strings.dart';
 import 'package:e_mart/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
