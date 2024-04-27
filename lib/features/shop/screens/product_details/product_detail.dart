@@ -1,4 +1,5 @@
 import 'package:e_mart/common/widgets/texts/section_heading.dart';
+import 'package:e_mart/features/shop/models/product_model.dart';
 import 'package:e_mart/features/shop/screens/product_details/widgets/bottom_add_to_card_widget.dart';
 import 'package:e_mart/features/shop/screens/product_details/widgets/product_attributes.dart';
 import 'package:e_mart/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
@@ -12,7 +13,9 @@ import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
 class ProductDetailScreen extends StatelessWidget {
-  const ProductDetailScreen({super.key});
+  const ProductDetailScreen({super.key, required this.product});
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class ProductDetailScreen extends StatelessWidget {
         child: Column(
           children: [
             // -----------------Product Image Slider--------------
-            const PProductImageSlider(),
+             PProductImageSlider(product: product),
 
             // ----------------------Product Details...............
             Padding(
@@ -37,7 +40,7 @@ class ProductDetailScreen extends StatelessWidget {
                   const PRatingAndshare(),
 
                   // ---------Price, Title, Stack, & Brand------------
-                  const PProductMetaData(),
+                   PProductMetaData(product: product),
 
                   // ----------Attributes-----------
                   const PProductAttributes(),
@@ -80,7 +83,8 @@ class ProductDetailScreen extends StatelessWidget {
                           title: 'Reviews (199)', showActionButton: false),
                       IconButton(
                           icon: const Icon(Iconsax.arrow_right_3, size: 18),
-                          onPressed: () => Get.to(() => const ProductReviewsScreen())),
+                          onPressed: () =>
+                              Get.to(() => const ProductReviewsScreen())),
                     ],
                   ),
                   const SizedBox(height: PSizes.spaceBtwSections),

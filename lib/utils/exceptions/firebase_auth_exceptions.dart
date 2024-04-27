@@ -32,7 +32,7 @@ class PFirebaseAuthException implements Exception {
       case '':
         return '';
       default:
-        return '';
+        return 'Firebase authentication error $code';
     }
   }
 }

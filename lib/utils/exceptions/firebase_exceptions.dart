@@ -28,7 +28,7 @@ class PFirebaseException implements Exception {
       case 'weak-password':
         return 'Incorrect password. Please choose astrong password.';
       default:
-        return '';
+        return 'Error from firebase exceptionn $code';
     }
   }
 }

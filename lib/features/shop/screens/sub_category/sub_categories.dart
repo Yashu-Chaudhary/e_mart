@@ -21,7 +21,7 @@ class SubCategoriesScreen extends StatelessWidget {
               /// ---------Banner--------
               const PRoundedImage(
                 width: double.infinity,
-                imageUrl: PImages.promoBanner4,
+                imageUrl: PImages.banner1,
                 applyImageRadius: true,
               ),
               const SizedBox(height: PSizes.spaceBtwSections),

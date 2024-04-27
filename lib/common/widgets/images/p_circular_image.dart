@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:e_mart/common/widgets/shimmers/shimmer.dart';
 import 'package:e_mart/utils/constants/color.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:e_mart/utils/helpers/helper_functions.dart';
@@ -25,24 +27,31 @@ class PCircularImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool dark = PHelperFunctions.isDarkMode(context);
-    return Container(      
+    return Container(
       width: width,
       height: height,
-      padding: const EdgeInsets.all(PSizes.sm),
+      padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
-        color: dark ? PColors.black : PColors.white,
+        // if image background color is nulll then switch it to laight and dark mode color design.
+        color: backgroundColor ??(dark ? PColors.black : PColors.white) ,
         borderRadius: BorderRadius.circular(100),
       ),
       child: ClipRRect(
-
         borderRadius: BorderRadius.circular(100),
-        child: Image(
-          fit: fit,
-          image: isNetworkImage
-              ? NetworkImage(image)
-              : AssetImage(image) as ImageProvider,
-          // color: dark ? PColors.white : PColors.black,
-        ),
+        child: isNetworkImage
+            ? CachedNetworkImage(
+                imageUrl: image,
+                fit: BoxFit.fill,
+                color: overlayColor,
+                progressIndicatorBuilder: (context, url, downloadProgress) =>
+                    const PShimmerEffect(width: 55, height: 55, radius: 55,),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
+              )
+            : Image(
+                fit: BoxFit.fill,
+                image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider,
+                color: overlayColor,
+              ),
       ),
     );
   }

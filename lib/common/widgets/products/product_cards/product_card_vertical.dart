@@ -5,9 +5,11 @@ import 'package:e_mart/common/widgets/images/p_rounded_image.dart';
 import 'package:e_mart/common/widgets/texts/p_brand_title_text_with_verified_icon.dart';
 import 'package:e_mart/common/widgets/texts/product_price_text.dart';
 import 'package:e_mart/common/widgets/texts/product_title_text.dart';
+import 'package:e_mart/features/shop/controllers/product/product_controller.dart';
+import 'package:e_mart/features/shop/models/product_model.dart';
 import 'package:e_mart/features/shop/screens/product_details/product_detail.dart';
 import 'package:e_mart/utils/constants/color.dart';
-import 'package:e_mart/utils/constants/image_strings.dart';
+import 'package:e_mart/utils/constants/enums.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:e_mart/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -15,15 +17,22 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class PProductCardVertical extends StatelessWidget {
-  const PProductCardVertical({super.key});
+  const PProductCardVertical({super.key, required this.product});
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
+    final controller = ProductController.instance;
+    final salePercentage =
+        controller.calculateSalePercentage(product.price, product.salePrice);
     final dark = PHelperFunctions.isDarkMode(context);
 
     // Container with side padding, color, edges, radius, and shadow.
     return GestureDetector(
-      onTap: () => Get.to(() =>const ProductDetailScreen()),
+      onTap: () => Get.to(() => ProductDetailScreen(
+            product: product,
+          )),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -36,14 +45,18 @@ class PProductCardVertical extends StatelessWidget {
             // .............Thumbnail, Wishlist Button, Discount Tag.........
             PRoundedContainer(
               height: 180,
+              width: 180,
               padding: const EdgeInsets.all(PSizes.sm),
               backgroundColor: dark ? PColors.dark : PColors.light,
               child: Stack(
                 children: [
                   // ..................Thumbnail Image...................
-                  const PRoundedImage(
-                    imageUrl: PImages.productImage1,
-                    applyImageRadius: true,
+                  Center(
+                    child: PRoundedImage(
+                      imageUrl: product.thumbnail,
+                      applyImageRadius: true,
+                      isNetworkImage: true,
+                    ),
                   ),
 
                   // ...............Sale Tag..............
@@ -55,7 +68,7 @@ class PProductCardVertical extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: PSizes.sm, vertical: PSizes.xs),
                       child: Text(
-                        '25%',
+                        '$salePercentage%',
                         style: Theme.of(context)
                             .textTheme
                             .labelLarge!
@@ -80,31 +93,55 @@ class PProductCardVertical extends StatelessWidget {
             ),
 
             // .............Details...............
-            const Padding(
-              padding: EdgeInsets.only(left: PSizes.sm),
+            Padding(
+              padding: const EdgeInsets.only(left: PSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   PProductTitleText(
-                    title: 'Black And White Nike AIr Shoes',
+                    title: product.title,
                     smallSize: true,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: PSizes.spaceBtwItems / 2,
                   ),
-                  PBrandTitleWithVerifiedIcon(title: 'Nike',),
+                  PBrandTitleWithVerifiedIcon(
+                    title: product.brand!.name,
+                  ),
                 ],
               ),
             ),
             const Spacer(),
-            
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // .......Price.....
-                const Padding(
-                  padding: EdgeInsets.only(left: PSizes.sm),
-                  child: PProductPriceText(price: '1777.7')),
+                Flexible(
+                  child: Column(
+                    children: [
+                      if (product.productType ==
+                              ProductType.single.toString() &&
+                          product.salePrice > 0)
+                        Padding(
+                            padding: const EdgeInsets.only(left: PSizes.sm),
+                            child: Text(
+                              product.price.toString(),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelMedium!
+                                  .apply(
+                                      decoration: TextDecoration.lineThrough),
+                            )),
+
+                      // price, show sale price as main price if sale exist.
+                      Padding(
+                          padding: const EdgeInsets.only(left: PSizes.sm),
+                          child: PProductPriceText(
+                              price: controller.getProductPrice(product))),
+                    ],
+                  ),
+                ),
                 // ..........Add to Cart Button............
                 Container(
                   decoration: const BoxDecoration(
@@ -133,4 +170,3 @@ class PProductCardVertical extends StatelessWidget {
     );
   }
 }
-

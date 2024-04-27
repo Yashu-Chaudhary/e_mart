@@ -31,7 +31,7 @@ class PPlatformException implements Exception {
         case 'invalid-verification-code':
         return 'Invalid verification code. Please enter a valid code.';
       default:
-        return '';
+        return 'Platfrom exception $code';
     }
   }
 }

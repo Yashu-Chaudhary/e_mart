@@ -33,7 +33,7 @@ class PFormatExcepton implements Exception {
       case 'invalid-numeric-format':
         return const PFormatExcepton('The input should be a valid numeric format.');
       default:
-        return const PFormatExcepton('');
+        return  PFormatExcepton('Format exception $code');
     }
   }
 }

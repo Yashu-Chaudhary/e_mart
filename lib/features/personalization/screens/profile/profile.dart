@@ -1,10 +1,14 @@
 import 'package:e_mart/common/widgets/appbar/appbar.dart';
 import 'package:e_mart/common/widgets/images/p_circular_image.dart';
 import 'package:e_mart/common/widgets/texts/section_heading.dart';
+import 'package:e_mart/features/personalization/controllers/user_controller.dart';
+import 'package:e_mart/features/personalization/screens/profile/widgets/change_name.dart';
 import 'package:e_mart/features/personalization/screens/profile/widgets/profile_menu.dart';
+import 'package:e_mart/common/widgets/shimmers/shimmer.dart';
 import 'package:e_mart/utils/constants/image_strings.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -12,6 +16,8 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+    final controller = UserController.instance;
     return Scaffold(
       appBar: const PAppBar(
         title: Text('Profile'),
@@ -28,14 +34,29 @@ class ProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    const PCircularImage(
-                      image: PImages.user,
-                      width: 80,
-                      height: 80,
-                      isNetworkImage: false,
+                    Obx(
+                      () {
+                        final networkImage =
+                            controller.user.value.profilePicture;
+                        final image = networkImage.isNotEmpty
+                            ? networkImage
+                            : PImages.user;
+                        return controller.iamgeUploading.value
+                            ? const PShimmerEffect(
+                                width: 80,
+                                height: 80,
+                                radius: 80,
+                              )
+                            : PCircularImage(
+                                image: image,
+                                width: 80,
+                                height: 80,
+                                isNetworkImage: networkImage.isNotEmpty,
+                              );
+                      },
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () => controller.uploadUserProfilePicture(),
                       child: const Text('Change Profile Picture'),
                     ),
                   ],
@@ -55,12 +76,12 @@ class ProfileScreen extends StatelessWidget {
 
               PProfileMenu(
                 title: 'Name',
-                value: 'Yashu Chaudhary',
-                onPressed: () {},
+                value: controller.user.value.username,
+                onPressed: () => Get.to(() => const ChangeName()),
               ),
               PProfileMenu(
                 title: 'Username',
-                value: 'yashu_chaudhary',
+                value: controller.user.value.username,
                 onPressed: () {},
               ),
               const SizedBox(height: PSizes.spaceBtwItems),
@@ -74,18 +95,18 @@ class ProfileScreen extends StatelessWidget {
 
               PProfileMenu(
                 title: 'User ID',
-                value: '777',
+                value: controller.user.value.id,
                 onPressed: () {},
                 icon: Iconsax.copy,
               ),
               PProfileMenu(
                 title: 'E-mail',
-                value: 'yashusky232@gmail.com',
+                value: controller.user.value.email,
                 onPressed: () {},
               ),
               PProfileMenu(
                 title: 'Phone Number',
-                value: '+91 7906277120',
+                value: controller.user.value.phoneNumber,
                 onPressed: () {},
               ),
               PProfileMenu(
@@ -103,7 +124,7 @@ class ProfileScreen extends StatelessWidget {
 
               Center(
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () => controller.deleteAccountWarningPopup(),
                   child: const Text(
                     'Close Account',
                     style: TextStyle(color: Colors.red),

@@ -52,8 +52,6 @@ class LoginController extends GetxController {
       }
 
       // Login user using EMail & password Authentication
-      final userCredentials = await AuthenticationRepository.instance
-          .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
       // Remove Loader
       PFullScreenLoader.stopLoading();

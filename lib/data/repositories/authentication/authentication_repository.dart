@@ -1,6 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
-
+import 'package:e_mart/data/repositories/user/user_repository.dart';
 import 'package:e_mart/features/authentication/screens/login/login.dart';
 import 'package:e_mart/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:e_mart/features/authentication/screens/signup/verify_email.dart';
@@ -22,6 +22,9 @@ class AuthenticationRepository extends GetxController {
   /// Variables
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
+
+  // et Authenticated User Data
+  User? get authUser => _auth.currentUser;
 
   /// Called from main.dart on app launch
   @override
@@ -130,7 +133,28 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
-  /*-----------------Federated identity &social sign-in ----------- */
+  /// [ReAuthenticate] - RE AUTHENTICATE USER
+  Future<void> reAuthenticationWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      // Create a credential
+      AuthCredential credential =
+          EmailAuthProvider.credential(email: email, password: password);
+
+      // REAuthenticate
+      await _auth.currentUser!.reauthenticateWithCredential(credential);
+    } on FirebaseAuthException catch (e) {
+      throw PFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw PFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const PFormatExcepton();
+    } on PlatformException catch (e) {
+      throw PPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
 
   ///[GoogleAuthentication] - GOOGLE
   Future<UserCredential?> siginInWithGoogle() async {
@@ -148,7 +172,6 @@ class AuthenticationRepository extends GetxController {
 
       // Once signed in, return the userCredential
       return await _auth.signInWithCredential(credentials);
-
     } on FirebaseAuthException catch (e) {
       throw PFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
@@ -183,6 +206,22 @@ class AuthenticationRepository extends GetxController {
   }
 
   /// DELETE USER -Remove user Auth and Firestore Account.
-  ///
-  // / ----------------------------------
+  Future<void> deleteAccount() async {
+    try {
+      await UserRepository.instance.removeUserRecord(_auth.currentUser!.uid);
+      await _auth.currentUser?.delete();
+    } on FirebaseAuthException catch (e) {
+      throw PFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw PFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const PFormatExcepton();
+    } on PlatformException catch (e) {
+      throw PPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
 }
+  // / ----------------------------------
+

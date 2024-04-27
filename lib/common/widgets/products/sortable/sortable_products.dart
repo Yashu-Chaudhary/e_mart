@@ -1,5 +1,6 @@
 import 'package:e_mart/common/widgets/layouts/grid_layout.dart';
 import 'package:e_mart/common/widgets/products/product_cards/product_card_vertical.dart';
+import 'package:e_mart/features/shop/models/product_model.dart';
 import 'package:e_mart/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -37,7 +38,7 @@ class PSortableProducts extends StatelessWidget {
         /// Products
         PGridLayout(
             itemCount: 6,
-            itemBuilder: (_, index) => const PProductCardVertical())
+            itemBuilder: (_, index) =>PProductCardVertical(product: ProductModel.empty(),))
       ],
     );
   }

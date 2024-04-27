@@ -5,6 +5,7 @@ import 'package:e_mart/common/widgets/custom_shapes/containers/search_container.
 import 'package:e_mart/common/widgets/layouts/grid_layout.dart';
 import 'package:e_mart/common/widgets/products/cart_menu_icon.dart';
 import 'package:e_mart/common/widgets/texts/section_heading.dart';
+import 'package:e_mart/features/shop/controllers/category_controller.dart';
 import 'package:e_mart/features/shop/screens/brand/all_brands.dart';
 import 'package:e_mart/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:e_mart/utils/constants/color.dart';
@@ -18,11 +19,11 @@ class StoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categories = CategoryController.instance.featuredCategories;
     final bool dark = PHelperFunctions.isDarkMode(context);
     return DefaultTabController(
-      length: 5,
+      length: categories.length,
       child: Scaffold(
-
         // ........AppBar.............
         appBar: PAppBar(
             title: Text(
@@ -33,7 +34,6 @@ class StoreScreen extends StatelessWidget {
               PCartCounterIcon(onPressed: () {}),
             ]),
         body: NestedScrollView(
-
           // ................Header  ................
           headerSliverBuilder: (_, innerBoxIsScrolled) {
             return [
@@ -66,7 +66,9 @@ class StoreScreen extends StatelessWidget {
 
                       // ..............Feature Brands..........
                       PSectionHeading(
-                          title: 'Featured Brands', onPressed: () => Get.to(() => const AllBrandsScreen())),
+                          title: 'Featured Brands',
+                          onPressed: () =>
+                              Get.to(() => const AllBrandsScreen())),
 
                       const SizedBox(
                         height: PSizes.spaceBtwItems / 1.5,
@@ -87,28 +89,18 @@ class StoreScreen extends StatelessWidget {
                 ),
 
                 // ..........Tabs.......
-                bottom: const PTabBar(
-                  tabs: [
-                    Tab(child: Text('Sports')),
-                    Tab(child: Text('Furniture')),
-                    Tab(child: Text('Electronics')),
-                    Tab(child: Text('Clothes')),
-                    Tab(child: Text('Consmetics')),
-                  ],
+                bottom: PTabBar(
+                  tabs: categories.map((category) => Tab(child: Text(category.name))).toList()
                 ),
               ),
             ];
           },
 
           // ..........Body..........
-          body: const TabBarView(
-            children: [
-              PCategoryTab(),
-              PCategoryTab(),
-              PCategoryTab(),
-              PCategoryTab(),
-              PCategoryTab(),
-            ],
+          body:  TabBarView(
+            children: 
+              categories.map((category) => PCategoryTab(category: category,)).toList()
+            
           ),
         ),
       ),

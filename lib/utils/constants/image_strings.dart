@@ -19,8 +19,8 @@ class PImages {
   static const onBoardingImage3 =
       'assets/images/on_boarding_images/sammy-line-delivering.gif';
 
-      // success screen animation
-      static const String successfullyRegisterAnimation =
+  // success screen animation
+  static const String successfullyRegisterAnimation =
       "assets/images/user/profile.png";
 
   // ...............Animations.................
@@ -45,13 +45,16 @@ class PImages {
   static const String jeweleryIcon = "";
   static const String electronicIcon = "";
 
+  // --Category Icons
+
   // ................Banners..................
-  static const String promoBanner1 =
-      "assets/images/banners/banner-fashio-sale.jpeg";
-  static const String promoBanner2 =
-      "assets/images/banners/shoes-banner-2.jpeg";
-  static const String promoBanner3 = "assets/images/banners/bannet-jacket.jpeg";
-  static const String promoBanner4 = "assets/images/banners/bannet-jacket.jpeg";
+  static const String banner1 = "assets/images/banners/banner-fashio-sale.jpeg";
+  static const String banner2 = "assets/images/banners/shoes-banner-2.jpeg";
+  static const String banner3 = "assets/images/banners/bannet-jacket.jpeg";
+  static const String banner4 = "assets/images/banners/bannet-jacket.jpeg";
+  static const String banner5 = "";
+  static const String banner6 = "";
+  static const String banner9 = "";
 
   // ---------------Product Reviews-------------
   static const String userProfileImage1 = "";
@@ -100,13 +103,13 @@ class PImages {
   static const String productImage18 = "";
   static const String productImage19 = "";
   static const String productImage20 = "";
-  static const String productImage21 = "";
-  static const String productImage22 = "";
-  static const String productImage23 = "";
-  static const String productImage24 = "";
+  static const String productImages69 = "";
+  static const String productImage68 = "";
+  static const String zaraLogo = "";
+  static const String productImage69 = "";
+  static const String nikeLogo = '';
 
-  /// thsi is the loader image 
+  /// thsi is the loader image
   static const String docerAnimation =
       "assets/images/animations/processing.json";
-  
 }
